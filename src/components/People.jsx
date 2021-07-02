@@ -1,35 +1,28 @@
-import React from 'react';
-    
-const People = () => {
+import React from "react";
 
-
- 
-     return (
-<>
-<div class="card" style="width: 18rem;">
-
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">An item</li>
-    <li class="list-group-item">A second item</li>
-    <li class="list-group-item">A third item</li>
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-      
-  </div>
-</>
-)}
-
-
-
-
-
-
+const People = ({ peeps }) => {
+  return (
+    <>
+      <div className="card">
+        <div className="card-body">
+          <h5 className="card-title">Card title</h5>
+          <p className="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+        </div>
+        <ul className="list-group list-group-flush">
+          <li className="list-group-item">{peeps.id}</li>
+          <li className="list-group-item">A second item</li>
+          <li className="list-group-item">A third item</li>
+        </ul>
+        <div className="card-body">
+          {/* <a href="#" className="card-link">Card link</a>
+    <a href="#" className="card-link">Another link</a> */}
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default People;

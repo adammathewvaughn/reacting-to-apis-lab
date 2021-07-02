@@ -4,13 +4,21 @@ import Films from "./components/Films";
 
 const App = () => {
   let [films,setFilms]=useState([])
+  let [people,setPeople]=useState([])
   // let peoplename;
   // let description;
   useEffect(() => {
     fetch("https://ghibliapi.herokuapp.com/films")
     .then(res=>res.json())
-    .then((films) => setFilms(films))
+    .then(films =>setFilms(films))
   }, []);
+
+  useEffect(() => {
+    fetch("https://ghibliapi.herokuapp.com/people")
+    .then(res=>res.json())
+    .then(people =>setPeople(people))
+  }, []);
+  
   return (
     <>
       <div className=" d-flex justify-content-center">
@@ -34,9 +42,10 @@ const App = () => {
       <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">﷯
       </div>
       </div>
-     {/* adding multiple props */}
       </div>
+     {/* adding multiple props */}
           {films.map(film=><Films key={film.id} film={film} />)} 
+          {people.map(peeps=><People key={peeps.id} peeps={peeps} />)} 
 
 
           </>
